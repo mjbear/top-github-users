@@ -2,7 +2,9 @@ name: Top GitHub Users
 on:
   schedule:
     # - cron: '0 * * * *'
-    - cron: '4 * * * *'
+    # - cron: '4 * * * *'
+    # each run takes around 7 minutes
+    - cron: '4 3 * * *'
   workflow_dispatch:
 jobs:
   release:
