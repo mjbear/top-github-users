@@ -9,18 +9,17 @@ on:
 jobs:
   release:
     name: GitHub Active Users
-    # runs-on: ubuntu-latest
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          # token: ${{ secrets.CUSTOM_TOKEN }}
-          token: ${{ secrets.CUSTOM_TOKEN_PAT }}
+          token: ${{ secrets.CUSTOM_TOKEN }}
+          # token: ${{ secrets.CUSTOM_TOKEN_PAT }}
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.17.0
       - uses: gayanvoice/top-github-users-action@master
         env:
-          # CUSTOM_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
-          CUSTOM_TOKEN: ${{ secrets.CUSTOM_TOKEN_PAT }}
+          CUSTOM_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
+          # CUSTOM_TOKEN: ${{ secrets.CUSTOM_TOKEN_PAT }}
